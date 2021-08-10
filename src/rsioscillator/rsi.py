@@ -89,7 +89,7 @@ def rsi_plot_with_signals(df: DataFrame, symbol: str='EQUITY'):
     ax1.plot(df['Close'], linewidth=2.5, color='skyblue', label='IBM')
     ax1.plot(df.index, buy_price, marker='^', markersize=10, color='green', label='BUY SIGNAL')
     ax1.plot(df.index, sell_price, marker='v', markersize=10, color='r', label='SELL SIGNAL')
-    ax1.set_title(symbol + 'RSI TRADE SIGNALS')
+    ax1.set_title(symbol + ' RSI TRADE SIGNALS')
     ax2.plot(df['RSI-14'], color='orange', linewidth=2.5)
     ax2.axhline(30, linestyle='--', linewidth=1.5, color='grey')
     ax2.axhline(70, linestyle='--', linewidth=1.5, color='grey')

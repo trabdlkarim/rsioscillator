@@ -9,7 +9,7 @@ from rsioscillator import VERSION
 @click.command()
 @click.version_option(version=VERSION, prog_name="rsioscillator")
 @click.argument('excel') 
-def main(excel):    
+def run(excel):    
     data = ds.read_excel(excel)
     data = ds.process_data(data)
     data['RSI-14'] = rsi.compute_ewm_rsi(data['Close'])
@@ -21,4 +21,4 @@ def main(excel):
     rsi.rsi_plot_with_signals(data) 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    run(sys.argv[1:])
